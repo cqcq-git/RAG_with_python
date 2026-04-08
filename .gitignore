@@ -18,3 +18,5 @@ chroma_storage/
 # OS files
 .DS_Store
 
+# Chainlit files
+.chainlit/
