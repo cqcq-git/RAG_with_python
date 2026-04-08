@@ -5,11 +5,15 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "chainlit>=2.11.0",
     "chromadb>=1.5.5",
+    "fastapi>=0.135.3",
     "google-genai>=1.70.0",
     "ipykernel>=7.2.0",
     "langchain>=1.2.15",
     "openai>=2.30.0",
+    "pydantic>=2.12.5",
     "python-dotenv>=1.2.2",
     "sentence-transformers>=5.3.0",
+    "uvicorn>=0.43.0",
 ]
