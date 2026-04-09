@@ -9,7 +9,7 @@ This project demonstrates a Retrieval-Augmented Generation (RAG) system implemen
 - **Text embedding** using `sentence-transformers`
 - **Reranking** using `cross-encoder/ms-marco-MiniLM-L12-v2`
 - **Vector database** using ChromaDB
-- **Answer generation** with Google's Gemini 2.5 model via `google-genai`
+- **Answer generation** with Google's Gemini 2.0 model via `google-genai` or local models like qwen3:4b via Ollama
 
 ## Dependencies
 
@@ -19,7 +19,8 @@ The project uses the following key packages:
 - `fastapi`: Web API framework
 - `uvicorn`: ASGI server
 - `sentence-transformers`: For text embedding
-- `google-genai`: For Gemini 2.5 integration
+- `google-genai`: For Gemini integration
+- `ollama`: For local model support
 - `chromadb`: Vector database for storing and retrieving embeddings
 - `python-dotenv`: For environment variable management
 
@@ -30,6 +31,12 @@ The project uses the following key packages:
 3. In the project root, install dependencies:
    ```bash
    uv sync
+   ``` (if using Gemini) or set `LLM_MODE=ollama` for local models.
+5. If using local models, install Ollama and pull the model:
+   ```bash
+   # Install Ollama (if not already installed)
+   # Then pull the model
+   ollama pull qwen3:4b
    ```
 4. Create a `.env` file with your Google Gemini API credentials.
 
@@ -62,7 +69,7 @@ Start the interactive UI with:
 ```bash
 uv run chainlit run ui.py -w
 ```
-
+response using either Google Gemini or a local Ollama model based on the `LLM_MODE` environment variabl
 Open the URL shown by Chainlit in your browser to chat with the RAG demo.
 
 ## App Behavior
